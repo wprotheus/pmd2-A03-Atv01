@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="161dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="2dp"
+    android:background="#EDDBC3"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/tvNome"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="false"
+        android:editable="false"
+        android:paddingStart="8dp"
+        android:textAlignment="viewStart"
+        android:textColor="#1A237E"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvIdade"
+        app:layout_constraintEnd_toStartOf="@+id/ivSituacao"
+        app:layout_constraintStart_toEndOf="@+id/tvNomeAluno"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMedia"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="false"
+        android:editable="false"
+        android:numeric="decimal"
+        android:paddingStart="8dp"
+        android:textAlignment="viewStart"
+        android:textColor="#1A237E"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvSituacao"
+        app:layout_constraintEnd_toStartOf="@+id/ivSituacao"
+        app:layout_constraintStart_toEndOf="@+id/tvMediaAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdade" />
+
+    <TextView
+        android:id="@+id/tvSituacao"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="false"
+        android:editable="false"
+        android:paddingStart="8dp"
+        android:textAlignment="viewStart"
+        android:textColor="#1A237E"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toStartOf="@+id/ivSituacao"
+        app:layout_constraintStart_toEndOf="@+id/tvSituacaoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvMedia" />
+
+    <TextView
+        android:id="@+id/tvIdade"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="false"
+        android:editable="false"
+        android:numeric="decimal"
+        android:paddingStart="8dp"
+        android:textAlignment="viewStart"
+        android:textColor="#1A237E"
+        android:textSize="17sp"
+        android:textStyle="italic"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/tvMedia"
+        app:layout_constraintEnd_toStartOf="@+id/ivSituacao"
+        app:layout_constraintStart_toEndOf="@+id/tvIdadeAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvNome" />
+
+    <TextView
+        android:id="@+id/tvNomeAluno"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Nome Aluno"
+        android:text="Nome:"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvIdadeAluno"
+        app:layout_constraintStart_toStartOf="@+id/tvIdadeAluno"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nome" />
+
+    <TextView
+        android:id="@+id/tvMediaAluno"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Média Aluno"
+        android:text="Média:"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSituacaoAluno"
+        app:layout_constraintStart_toStartOf="@+id/tvSituacaoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdadeAluno"
+        tools:text="Média" />
+
+    <TextView
+        android:id="@+id/tvSituacaoAluno"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Situação Aluno"
+        android:text="Situação:"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMediaAluno"
+        tools:text="Situação" />
+
+    <TextView
+        android:id="@+id/tvIdadeAluno"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Idade Aluno"
+        android:text="Idade:"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMediaAluno"
+        app:layout_constraintStart_toStartOf="@+id/tvMediaAluno"
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeAluno"
+        tools:text="Idade" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lavSituacao"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="242dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:background="@color/black"
+        android:backgroundTint="#A5D6A7"
+        app:barrierMargin="@dimen/cardview_default_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    app:lottie_rawRes="@raw/aprovado"-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
