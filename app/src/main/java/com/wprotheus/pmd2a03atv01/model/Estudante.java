@@ -53,9 +53,7 @@ public class Estudante implements Serializable {
     }
 
     public int getIdade() {
-        LocalDateTime hoje = LocalDateTime.now();
-        idade = (hoje.getYear()) - anoNascimento;
-        return idade;
+        return idade = (LocalDateTime.now().getYear()) - anoNascimento;
     }
 
     public void setIdade(int idade) {
@@ -75,6 +73,10 @@ public class Estudante implements Serializable {
     }
 
     public void setSituacao(boolean situacao) {
+    }
+
+    public String situacao() {
+        return isSituacao() ? "Aprovado" : "Reprovado";
     }
 
     public int getImagem() {

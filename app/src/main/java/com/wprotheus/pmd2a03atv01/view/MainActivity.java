@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                             lvDados.setAdapter(adapterList);
                         });
                     }
-                    System.out.println(estudantes.toString());
                 } else {
                     handler.post(() -> Toast.makeText(getApplicationContext(),
                             "Não foi possível obter os dados.", Toast.LENGTH_SHORT).show());

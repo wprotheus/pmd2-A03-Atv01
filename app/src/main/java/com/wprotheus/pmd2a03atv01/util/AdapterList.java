@@ -2,6 +2,7 @@ package com.wprotheus.pmd2a03atv01.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,10 +49,12 @@ public class AdapterList extends BaseAdapter {
         ((TextView) convertView.findViewById(R.id.tvIdade)).setText(String.valueOf(estudante.getIdade()));
         ((TextView) convertView.findViewById(R.id.tvMedia)).setText(String.valueOf(estudante.getMedia()));
         if (estudante.isSituacao()) {
-            ((TextView) convertView.findViewById(R.id.tvSituacao)).setText("Aprovado");
+            ((TextView) convertView.findViewById(R.id.tvSituacao)).setText(estudante.situacao());
+            ((TextView) convertView.findViewById(R.id.tvSituacao)).setTextColor(Color.rgb(9, 17, 99));
             ((LottieAnimationView) convertView.findViewById(R.id.lavSituacao)).setAnimation(estudante.getImagem());
         } else {
-            ((TextView) convertView.findViewById(R.id.tvSituacao)).setText("Reprovado");
+            ((TextView) convertView.findViewById(R.id.tvSituacao)).setText(estudante.situacao());
+            ((TextView) convertView.findViewById(R.id.tvSituacao)).setTextColor(Color.RED);
             ((LottieAnimationView) convertView.findViewById(R.id.lavSituacao)).setAnimation(estudante.getImagem());
         }
         return convertView;
