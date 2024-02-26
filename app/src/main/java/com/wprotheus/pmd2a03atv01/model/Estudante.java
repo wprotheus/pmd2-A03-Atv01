@@ -19,8 +19,6 @@ public class Estudante implements Serializable {
     @SerializedName("nota")
     @Expose
     private Nota nota;
-    private int idade;
-    private int imagem;
 
     public Estudante(String nome, int anoNascimento, Nota nota) {
         this.nome = nome;
@@ -53,16 +51,15 @@ public class Estudante implements Serializable {
     }
 
     public int getIdade() {
-        return idade = (LocalDateTime.now().getYear()) - anoNascimento;
+        return (LocalDateTime.now().getYear()) - anoNascimento;
     }
 
     public void setIdade(int idade) {
-        this.idade = idade;
     }
 
-    public double getMedia() {
-        DecimalFormat df = new DecimalFormat("0.##");
-        return Double.parseDouble(df.format((double) (nota.getN1() + nota.getN2() + nota.getN3()) / 3));
+    public String getMediaString() {
+        DecimalFormat df = new DecimalFormat("0.00");
+        return (df.format((double) (nota.getN1() + nota.getN2() + nota.getN3()) / 3)).replace(".", ",");
     }
 
     public void setMedia(double media) {
@@ -84,17 +81,15 @@ public class Estudante implements Serializable {
     }
 
     public void setImagem(int imagem) {
-        this.imagem = imagem;
     }
 
     @Override
     public String toString() {
-        String resultado = isSituacao() ? "Aprovado" : "Reprovado";
         final StringBuilder sb = new StringBuilder("User { ");
         sb.append("Nome: ").append(getNome()).append('\n')
                 .append("Idade: ").append(getIdade()).append('\n')
-                .append("Média: ").append(getMedia()).append('\n')
-                .append("Situação: ").append(resultado).append(" }\n");
+                .append("Média: ").append(getMediaString()).append('\n')
+                .append("Situação: ").append(situacao()).append(" }\n");
         return sb.toString();
     }
 }

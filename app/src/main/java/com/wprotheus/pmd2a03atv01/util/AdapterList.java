@@ -39,15 +39,15 @@ public class AdapterList extends BaseAdapter {
         return position;
     }
 
-    @SuppressLint("ResourceType")
+    @SuppressLint({"ResourceType", "ViewHolder", "InflateParams", "SetTextI18n"})
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Estudante estudante = estudantes.get(position);
         convertView = inflater.inflate(R.layout.list_layout, null);
 
-        ((TextView) convertView.findViewById(R.id.tvNome)).setText(String.valueOf(estudante.getNome()));
-        ((TextView) convertView.findViewById(R.id.tvIdade)).setText(String.valueOf(estudante.getIdade()));
-        ((TextView) convertView.findViewById(R.id.tvMedia)).setText(String.valueOf(estudante.getMedia()));
+        ((TextView) convertView.findViewById(R.id.tvNome)).setText(estudante.getNome());
+        ((TextView) convertView.findViewById(R.id.tvIdade)).setText(estudante.getIdade() + " anos");
+        ((TextView) convertView.findViewById(R.id.tvMedia)).setText(estudante.getMediaString());
         if (estudante.isSituacao()) {
             ((TextView) convertView.findViewById(R.id.tvSituacao)).setText(estudante.situacao());
             ((TextView) convertView.findViewById(R.id.tvSituacao)).setTextColor(Color.rgb(9, 17, 99));
